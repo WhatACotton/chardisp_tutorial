@@ -1,5 +1,5 @@
-VIVADO = /home/cotton/hdd/tools/Xilinx/Vivado/2022.2/bin/vivado
-XSCT = /home/cotton/hdd/tools/Xilinx/Vitis/2022.2/bin/xsct
+VIVADO = vivado
+XSCT = xsct
 DESIGN_TCL = ./tcl/elaboration.tcl
 XSA_FILE = ./dist/chardisp_wrapper.xsa
 
@@ -13,8 +13,10 @@ $(XSA_FILE): $(DESIGN_TCL)
 	fi
 
 setup: $(XSA_FILE)
-	@echo "Setting up the environment...";\
+	rm -rf workspace; \
+	echo "Setting up the environment...";\
 	${XSCT} ./tcl/xsct.tcl;\
+	# rm -rf ./workspace/test_project/src; \
 	cp -r ./vitis/src ./workspace/test_project
 
 all: $(XSA_FILE)

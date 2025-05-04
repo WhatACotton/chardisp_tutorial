@@ -2,7 +2,7 @@
 set current_dir [pwd]
 create_project -in_memory
 set obj [current_project]
-set_property -name "board_part_repo_paths" -value "[file normalize "/home/cotton/.Xilinx/Vivado/2022.2/xhub/board_store/xilinx_board_store"]" -objects $obj
+set_property -name "board_part_repo_paths" -value "[file normalize [file join $env(HOME) ".Xilinx/Vivado/2022.2/xhub/board_store/xilinx_board_store"]]" -objects $obj
 
 set_property -name "board_part" -value "digilentinc.com:zybo-z7-20:part0:1.0" -objects $obj
 set_property -name "default_lib" -value "xil_defaultlib" -objects $obj
