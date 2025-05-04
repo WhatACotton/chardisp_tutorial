@@ -7,3 +7,4 @@ https://www.shuwasystem.co.jp/support/7980html/6326.html
 
 This project is implemented so that bitstream generation and vitis project generation can be done all at once by simply executing the `make setup` command.
 
+![block design](bd.png)
